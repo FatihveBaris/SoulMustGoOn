@@ -11,20 +11,23 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
-    [SerializeField] private float playerSwordDmg;
-    [SerializeField] private float playerAttackSpeed; //çalýþma prensibi saniyede kaç kez saldýracaðýný gösteriyor
-    [SerializeField] private Rigidbody2D playerRb;
-    private Transform playerTransform;
     private Vector2 moveDir;
+    private Transform playerTransform;
+    [SerializeField] private Rigidbody2D playerRb;
+    
+
+    [SerializeField] private float playerSwordDmg;
+    [SerializeField] private float playerSwordAS; //çalýþma prensibi saniyede kaç kez saldýracaðýný gösteriyor
+    [SerializeField] private float playerSwordDist;
 
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
 
-        playerAttackSpeed = 60 / (playerAttackSpeed * 60);
+        playerSwordAS = 60 / (playerSwordAS * 60);
 
-        FunctionRepeat("PlayerSwordAttack",playerAttackSpeed);
+        FunctionRepeat("PlayerSwordAttack",playerSwordAS);
     }
 
     private void FixedUpdate()
@@ -35,6 +38,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
+
     }
 
     private void Move()
@@ -43,8 +47,10 @@ public class Player : MonoBehaviour
 
         if (moveDir.x < 0)
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        else
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        else if (moveDir.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+        }
 
     }
 
@@ -59,7 +65,32 @@ public class Player : MonoBehaviour
 
     private void PlayerSwordAttack()
     {
-        Debug.Log("saldýrýyorum");
+        
+
+        Vector2 direction = (transform.localScale.x > 0) ? -transform.right : transform.right;
+
+        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+
+        Debug.DrawRay(transform.position + new Vector3(0f,1), direction * playerSwordDist, Color.red);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position+new Vector3(0f, 1), direction, playerSwordDist);
+
+        
+
+        foreach (RaycastHit2D hit in hits)
+        {   
+            
+            Debug.Log(hit.collider);
+            if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+            {
+
+                
+                Debug.Log("düþmana vurdum");
+            }
+        }
 
     }
 
