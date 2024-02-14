@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float level;
     [SerializeField] private float playerHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
-    [SerializeField] private float playerAttack;
+    [SerializeField] private float playerSwordDmg;
     [SerializeField] private float playerAttackSpeed; //çalýþma prensibi saniyede kaç kez saldýracaðýný gösteriyor
     [SerializeField] private Rigidbody2D playerRb;
     private Transform playerTransform;
@@ -21,7 +22,9 @@ public class Player : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
 
-        FunctionRepeat();
+        playerAttackSpeed = 60 / (playerAttackSpeed * 60);
+
+        FunctionRepeat("PlayerSwordAttack",playerAttackSpeed);
     }
 
     private void FixedUpdate()
@@ -54,15 +57,20 @@ public class Player : MonoBehaviour
 
     }
 
-    private void PlayerAttack()
+    private void PlayerSwordAttack()
     {
         Debug.Log("saldýrýyorum");
+
     }
 
-    private void FunctionRepeat()
+    private void FunctionRepeat(string functionName)
     {
-        playerAttackSpeed = 60 / (playerAttackSpeed * 60);
+        
+        InvokeRepeating(functionName, 0, 0);
+    }
+    private void FunctionRepeat(string functionName,float repeatRate)
+    {
 
-        InvokeRepeating("PlayerAttack", 0, playerAttackSpeed);
+        InvokeRepeating(functionName, 0, repeatRate);
     }
 }
