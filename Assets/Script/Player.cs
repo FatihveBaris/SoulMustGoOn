@@ -50,8 +50,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(isMoving) Move();
-        else anim.SetBool("knightWalk", false);
+        Move();
 
         timerSword += Time.deltaTime;
         if (timerSword >= playerSwordAS)
@@ -72,7 +71,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        anim.SetBool("knightWalk",true);
+        AnimationUpdate();
 
         playerRb.velocity = new Vector2(moveDir.x * playerSpeed, moveDir.y * playerSpeed);
 
@@ -92,11 +91,7 @@ public class Player : MonoBehaviour
 
         moveDir = new Vector2(moveX, moveY).normalized;
 
-        if (moveDir.x != 0 || moveDir.y != 0)
-        {
-            isMoving = true;
-        }
-        else isMoving = false;
+     
     }
 
     private void PlayerSwordAttack()
@@ -158,16 +153,19 @@ public class Player : MonoBehaviour
         
 
     }
-    
 
-    private void FunctionRepeat(string functionName)
+    private void AnimationUpdate()
     {
-        
-        InvokeRepeating(functionName, 0, 0);
-    }
-    private void FunctionRepeat(string functionName,float repeatRate)
-    {
-
-        InvokeRepeating(functionName, 0, repeatRate);
+        if (moveDir.x != 0)
+        {
+            anim.SetBool("knightWalk",true);
+        }else if (moveDir.y != 0)
+        {
+            anim.SetBool("knightWalk", true);
+        }
+        else
+        {
+            anim.SetBool("knightWalk", false);
+        }
     }
 }
