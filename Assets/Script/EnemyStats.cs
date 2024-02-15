@@ -9,7 +9,7 @@ public class EnemyStats : MonoBehaviour
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
-
+    private bool isKilled = false;
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -22,12 +22,14 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
+           
            Kill();
         }
     }
 
     public void Kill()
     {
+        isKilled = true;
         Destroy(gameObject);
     }
 }
