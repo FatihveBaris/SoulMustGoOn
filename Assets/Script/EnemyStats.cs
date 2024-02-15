@@ -9,7 +9,8 @@ public class EnemyStats : MonoBehaviour
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
-    private bool isKilled = false;
+    public float giveExpRate;
+    public bool isKilled = false;
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
