@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4000011028196368}
   - component: {fileID: 95000011895321844}
   - component: {fileID: 7811196748640100385}
+  - component: {fileID: 6359014102613943522}
+  - component: {fileID: 8992941374511367020}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1000010755293042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.069, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42,7 +44,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010755293042}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2deec9488aaac47ad9c09eed3aed072e, type: 2}
   m_CullingMode: 0
@@ -100,6 +102,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5741443, y: 1.6807735}
   m_EdgeRadius: 0
+--- !u!50 &6359014102613943522
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010755293042}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &8992941374511367020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010755293042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b697795b9803e42ad78b7737505e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  playerHp: 10
+  playerArmor: 10
+  playerSpeed: 3
+  playerRb: {fileID: 6359014102613943522}
+  playerSwordDmg: 0
+  playerSwordAS: 5
+  playerSwordDist: 5
 --- !u!1 &1000011164445256
 GameObject:
   m_ObjectHideFlags: 0
