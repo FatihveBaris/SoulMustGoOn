@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] private float level;
+    [SerializeField] private float maxExp;
+    [SerializeField] private float currentExp;
+
+    public float CurrentExp { get => currentExp;  set => currentExp= value; }
+    public float MaxExp { get => maxExp; private set => maxExp = value; }
+
     [SerializeField] private float playerHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
@@ -50,6 +56,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        LevelUp();
         Move();
 
         timerSword += Time.deltaTime;
@@ -66,6 +73,7 @@ public class Player : MonoBehaviour
             timerAxe = 0f; // Zamanlayıcıyı sıfırla
         }
 
+        Debug.Log(currentExp);
 
     }
 
@@ -118,7 +126,11 @@ public class Player : MonoBehaviour
             if (hit.collider != null && hit.collider.CompareTag("Enemy"))
             {
                 hit.collider.GetComponent<EnemyStats>().TakeDamage(10);
-
+                if (hit.collider.GetComponent<EnemyStats>().isKilled == true)
+                {
+                    currentExp += hit.collider.GetComponent<EnemyStats>().giveExpRate;
+                    Debug.Log(currentExp);
+                }
 
             }
         }
@@ -166,6 +178,18 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("knightWalk", false);
+        }
+    }
+
+    private void LevelUp()
+    {
+        if (currentExp >= maxExp)
+        {
+            level += 1;
+            maxExp += maxExp;
+            currentExp = 0;
+            playerHp += playerHp / (playerHp / level);
+            Debug.Log(playerHp);
         }
     }
 }
