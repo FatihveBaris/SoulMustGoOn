@@ -7,7 +7,11 @@ using UnityEngine;
 public class EnemyScriptableObjects : ScriptableObject
 {
     //Düsmanlar icin temel statlar
-    public float moveSpeed;
-    public float MaxHealth;
-    public float damage;
+    [SerializeField] float moveSpeed;
+    public float moveSpeed { get => moveSpeed; private set => moveSpeed = value;}
+    [SerializeField] float maxHealth;
+    public float maxHealth { get => maxHealth; private set => maxHealth= value;}
+
+    [SerializeField] float damage;
+    public float damage { get => damage; private set => damage = value;}
 }

@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6624775626267663717, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
-  spawnArea: {x: 10, y: 8}
-  spawnTimer: 2
+  spawnArea: {x: 12, y: 8}
+  spawnTimer: 1
   player: {fileID: 1950043421}
 --- !u!4 &794160478
 Transform:

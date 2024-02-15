@@ -11,12 +11,6 @@ public class EnemyMovement : MonoBehaviour
         player = FindObjectOfType<Player>().transform;
     }
 
-    public void SetTarget(GameObject target)
-    {
-        player = target.transform;
-    }
-
-   
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.moveSpeed * Time.deltaTime);  //Düşmanı sürekli olarak oyuncuya doğru hareket ettirir
