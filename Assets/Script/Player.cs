@@ -7,12 +7,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Vector2 moveDir;
+    private Transform playerTransform;
+    private bool isMoving;
+    [SerializeField] private Animator anim;
+
+
     [SerializeField] private float level;
     [SerializeField] private float playerHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
-    private Vector2 moveDir;
-    private Transform playerTransform;
     [SerializeField] private Rigidbody2D playerRb;
 
     [SerializeField] private float playerSwordDmg;
@@ -46,9 +50,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if(isMoving) Move();
+        else anim.SetBool("knightWalk", false);
 
-        
         timerSword += Time.deltaTime;
         if (timerSword >= playerSwordAS)
         {
@@ -68,6 +72,8 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+        anim.SetBool("knightWalk",true);
+
         playerRb.velocity = new Vector2(moveDir.x * playerSpeed, moveDir.y * playerSpeed);
 
         if (moveDir.x < 0)
@@ -85,7 +91,12 @@ public class Player : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized;
-        
+
+        if (moveDir.x != 0 || moveDir.y != 0)
+        {
+            isMoving = true;
+        }
+        else isMoving = false;
     }
 
     private void PlayerSwordAttack()
@@ -111,9 +122,9 @@ public class Player : MonoBehaviour
 
             if (hit.collider != null && hit.collider.CompareTag("Enemy"))
             {
-                //Hasar verme kısmı
+                hit.collider.GetComponent<EnemyStats>().TakeDamage(10);
 
-                Debug.Log("d��mana vurdum");
+
             }
         }
     }
@@ -144,8 +155,6 @@ public class Player : MonoBehaviour
         {
             axeSprite.flipX = axeLastDirection;
         }
-        
-        //else if (axeInstanceRef.transform.right != Vector3.right) axeInstanceRef.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         
 
     }

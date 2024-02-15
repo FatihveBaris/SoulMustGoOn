@@ -44,12 +44,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010755293042}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2deec9488aaac47ad9c09eed3aed072e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -141,16 +141,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b697795b9803e42ad78b7737505e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 95000011895321844}
   level: 0
   playerHp: 10
   playerArmor: 10
   playerSpeed: 3
   playerRb: {fileID: 6359014102613943522}
   playerSwordDmg: 0
-  playerSwordAS: 5
+  playerSwordAS: 2
   playerSwordDist: 5
-  throwingAxePref: {fileID: 0}
-  playerTrowAxeCD: 0
+  throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
+  playerTrowAxeCD: 2
+  isAxeSkill: 1
 --- !u!1 &1000011164445256
 GameObject:
   m_ObjectHideFlags: 0
