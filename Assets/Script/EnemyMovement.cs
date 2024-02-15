@@ -11,6 +11,11 @@ public class EnemyMovement : MonoBehaviour
         player = FindObjectOfType<Player>().transform;
     }
 
+    public void SetTarget(GameObject target)
+    {
+        player = target.transform;
+    }
+
    
     void Update()
     {
