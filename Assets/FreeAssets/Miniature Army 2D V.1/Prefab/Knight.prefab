@@ -149,6 +149,8 @@ MonoBehaviour:
   playerSwordDmg: 0
   playerSwordAS: 5
   playerSwordDist: 5
+  throwingAxePref: {fileID: 0}
+  playerTrowAxeCD: 0
 --- !u!1 &1000011164445256
 GameObject:
   m_ObjectHideFlags: 0

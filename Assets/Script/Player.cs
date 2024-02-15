@@ -20,14 +20,23 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerSwordAS; //�al��ma prensibi saniyede ka� kez sald�raca��n� g�steriyor
     [SerializeField] private float playerSwordDist;
 
+    [SerializeField] private GameObject throwingAxePref;
+    [SerializeField] private float playerTrowAxeCD;
+    private bool isAxeSkill;
+
+
+    private float timerSword;
+    private float timerAxe;
+
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
 
         playerSwordAS = 60 / (playerSwordAS * 60);
+        playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
 
-        FunctionRepeat("PlayerSwordAttack",playerSwordAS);
     }
 
     private void FixedUpdate()
@@ -38,6 +47,22 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
+
+        
+        timerSword += Time.deltaTime;
+        if (timerSword >= playerSwordAS)
+        {
+            PlayerSwordAttack();
+            timerSword = 0f; // Zamanlayıcıyı sıfırla
+        }
+
+        timerAxe += Time.deltaTime;
+        if (timerSword >= playerTrowAxeCD)
+        {
+            PlayerThrowAxe();
+            timerSword = 0f; // Zamanlayıcıyı sıfırla
+        }
+
 
     }
 
@@ -51,7 +76,6 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
-
     }
 
     private void InputManagement()
@@ -60,7 +84,7 @@ public class Player : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized;
-
+        
     }
 
     private void PlayerSwordAttack()
@@ -78,21 +102,27 @@ public class Player : MonoBehaviour
         Debug.DrawRay(transform.position + new Vector3(0f,1), direction * playerSwordDist, Color.red);
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position+new Vector3(0f, 1), direction, playerSwordDist);
 
-        
+
 
         foreach (RaycastHit2D hit in hits)
-        {   
-            
-            Debug.Log(hit.collider);
+        {
+
+
             if (hit.collider != null && hit.collider.CompareTag("Enemy"))
             {
+                //Hasar verme kısmı
 
-                
                 Debug.Log("d��mana vurdum");
             }
         }
+    }
+
+    private void PlayerThrowAxe()
+    {
+        
 
     }
+    
 
     private void FunctionRepeat(string functionName)
     {
