@@ -8,10 +8,10 @@ public class EnemyScriptableObjects : ScriptableObject
 {
     //Düsmanlar icin temel statlar
     [SerializeField] float moveSpeed;
-    public float moveSpeed { get => moveSpeed; private set => moveSpeed = value;}
+    public float MoveSpeed { get => moveSpeed; private set => moveSpeed = value;}
     [SerializeField] float maxHealth;
-    public float maxHealth { get => maxHealth; private set => maxHealth= value;}
+    public float MaxHealth { get => maxHealth; private set => maxHealth= value;}
 
     [SerializeField] float damage;
-    public float damage { get => damage; private set => damage = value;}
+    public float Damage { get => damage; private set => damage = value;}
 }

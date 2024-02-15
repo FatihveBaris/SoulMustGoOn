@@ -12,13 +12,22 @@ public class EnemyStats : MonoBehaviour
 
     void Awake()
     {
-        currentMoveSpeed = enemyData.moveSpeed;
-        currentHealth = enemyData.maxHealth;
-        currentDamage = enemyData.damage;
+        currentMoveSpeed = enemyData.MoveSpeed;
+        currentHealth = enemyData.MaxHealth;
+        currentDamage = enemyData.Damage;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
+        if(currentHealth <= 0)
+        {
+           Kill();
+        }
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
 }

@@ -13,6 +13,6 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.moveSpeed * Time.deltaTime);  //Düşmanı sürekli olarak oyuncuya doğru hareket ettirir
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);  //Düşmanı sürekli olarak oyuncuya doğru hareket ettirir
     }
 }
