@@ -181,5 +181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: c60d70c062a9f7e498d4af7905824b06, type: 2}
   anim: {fileID: 4058911601030153650}
+  sr: {fileID: 3562116503861018603}
   giveExpRate: 10
   isKilled: 0

@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObjects enemyData;
     [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer sr;
     // Current Stats
     float currentMoveSpeed;
     float currentHealth;
@@ -25,8 +26,8 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
-            //anim.SetBool("skeletonDie",true);
-            Kill();
+            anim.SetBool("skeletonDie",true);
+
         }
     }
 
@@ -34,5 +35,13 @@ public class EnemyStats : MonoBehaviour
     {
         isKilled = true;
         Destroy(gameObject); 
+    }
+
+    public void Update()
+    {
+        if (sr.enabled == false)
+        {
+            Kill();
+        }
     }
 }
