@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     
 
     [SerializeField] private float playerSwordDmg;
-    [SerializeField] private float playerSwordAS; //çalýþma prensibi saniyede kaç kez saldýracaðýný gösteriyor
+    [SerializeField] private float playerSwordAS; //ï¿½alï¿½ï¿½ma prensibi saniyede kaï¿½ kez saldï¿½racaï¿½ï¿½nï¿½ gï¿½steriyor
     [SerializeField] private float playerSwordDist;
 
     private void Start()
@@ -69,11 +69,11 @@ public class Player : MonoBehaviour
 
         Vector2 direction = (transform.localScale.x > 0) ? -transform.right : transform.right;
 
-        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
-        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
-        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
-        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
-        //YUKARIDAKÝ DIRECTIONA GÖRE BURADA ANÝMASYONU GERÇEKLEÞTÝREBÝLÝRSÝN
+        //YUKARIDAKï¿½ DIRECTIONA Gï¿½RE BURADA ANï¿½MASYONU GERï¿½EKLEï¿½Tï¿½REBï¿½Lï¿½RSï¿½N
+        //YUKARIDAKï¿½ DIRECTIONA Gï¿½RE BURADA ANï¿½MASYONU GERï¿½EKLEï¿½Tï¿½REBï¿½Lï¿½RSï¿½N
+        //YUKARIDAKï¿½ DIRECTIONA Gï¿½RE BURADA ANï¿½MASYONU GERï¿½EKLEï¿½Tï¿½REBï¿½Lï¿½RSï¿½N
+        //YUKARIDAKï¿½ DIRECTIONA Gï¿½RE BURADA ANï¿½MASYONU GERï¿½EKLEï¿½Tï¿½REBï¿½Lï¿½RSï¿½N
+        //YUKARIDAKï¿½ DIRECTIONA Gï¿½RE BURADA ANï¿½MASYONU GERï¿½EKLEï¿½Tï¿½REBï¿½Lï¿½RSï¿½N
 
         Debug.DrawRay(transform.position + new Vector3(0f,1), direction * playerSwordDist, Color.red);
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position+new Vector3(0f, 1), direction, playerSwordDist);
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             {
 
                 
-                Debug.Log("düþmana vurdum");
+                Debug.Log("dï¿½ï¿½mana vurdum");
             }
         }
 
