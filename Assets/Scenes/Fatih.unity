@@ -344,8 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 331665613}
-  spawnArea: {x: 0, y: 0}
-  spawnTimer: 0
+  spawnArea: {x: 10, y: 10}
+  spawnTimer: 2
 --- !u!4 &794160478
 Transform:
   m_ObjectHideFlags: 0
