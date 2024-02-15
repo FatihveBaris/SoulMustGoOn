@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObjects enemyData;
-    // Current Stats
+    [SerializeField] private Animator anim;
+        // Current Stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
     public float giveExpRate;
-    public bool isKilled = false;
+        public bool isKilled = false;
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -23,8 +24,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
-           
-           Kill();
+            anim.SetBool("skeletonDie",true);
         }
     }
 
