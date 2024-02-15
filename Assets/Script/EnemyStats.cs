@@ -6,12 +6,13 @@ public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObjects enemyData;
     [SerializeField] private Animator anim;
-        // Current Stats
+    // Current Stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
     public float giveExpRate;
-        public bool isKilled = false;
+    public bool isKilled = false;
+
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -24,13 +25,14 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
-            anim.SetBool("skeletonDie",true);
+            //anim.SetBool("skeletonDie",true);
+            Kill();
         }
     }
 
     public void Kill()
     {
         isKilled = true;
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
 }
