@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public float CurrentExp { get => currentExp;  set => currentExp= value; }
     public float MaxExp { get => maxExp; private set => maxExp = value; }
 
-    [SerializeField] private float playerHp;
+    [SerializeField] public float playerHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
     [SerializeField] private Rigidbody2D playerRb;
@@ -73,8 +73,7 @@ public class Player : MonoBehaviour
             timerAxe = 0f; // Zamanlayıcıyı sıfırla
         }
 
-        Debug.Log(currentExp);
-
+   
     }
 
     private void Move()
@@ -166,6 +165,11 @@ public class Player : MonoBehaviour
 
     }
 
+    public void TakeDamagePlayer(float dmg)
+    {
+        playerHp -= dmg;
+    }
+
     private void AnimationUpdate()
     {
         if (moveDir.x != 0)
@@ -189,7 +193,6 @@ public class Player : MonoBehaviour
             maxExp += maxExp;
             currentExp = 0;
             playerHp += playerHp / (playerHp / level);
-            Debug.Log(playerHp);
         }
     }
 }

@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8737173
+      value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -381,6 +381,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8992941374511367020, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+      propertyPath: playerTrowAxeCD
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -455,6 +459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011742669328, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
+      propertyPath: m_TagString
+      value: Respawn
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013857073264, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.33
@@ -500,6 +508,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
+--- !u!1001 &1978941230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077091781727942575, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624775626267663717, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+      propertyPath: m_Name
+      value: Skeleton (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -509,4 +574,5 @@ SceneRoots:
   - {fileID: 1487498229}
   - {fileID: 250334003}
   - {fileID: 1233752157}
+  - {fileID: 1978941230}
   - {fileID: 943815366}
