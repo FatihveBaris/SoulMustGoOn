@@ -14,15 +14,15 @@ public class Player : MonoBehaviour
     private Vector2 moveDir;
     private Transform playerTransform;
     [SerializeField] private Rigidbody2D playerRb;
-    
 
     [SerializeField] private float playerSwordDmg;
     [SerializeField] private float playerSwordAS; //�al��ma prensibi saniyede ka� kez sald�raca��n� g�steriyor
     [SerializeField] private float playerSwordDist;
 
-    [SerializeField] private GameObject throwingAxePref;
+    [SerializeField] private GameObject throwAxePref;
     [SerializeField] private float playerTrowAxeCD;
-    private bool isAxeSkill;
+    [SerializeField] private bool isAxeSkill;
+    private bool axeLastDirection;
 
 
     private float timerSword;
@@ -57,10 +57,10 @@ public class Player : MonoBehaviour
         }
 
         timerAxe += Time.deltaTime;
-        if (timerSword >= playerTrowAxeCD)
+        if (timerAxe >= playerTrowAxeCD)
         {
-            PlayerThrowAxe();
-            timerSword = 0f; // Zamanlayıcıyı sıfırla
+            if (isAxeSkill)  PlayerThrowAxe();
+            timerAxe = 0f; // Zamanlayıcıyı sıfırla
         }
 
 
@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
         }
     }
+
 
     private void InputManagement()
     {
@@ -119,6 +120,32 @@ public class Player : MonoBehaviour
 
     private void PlayerThrowAxe()
     {
+        GameObject axeInstanceRef = Instantiate(throwAxePref, transform.position, Quaternion.identity);
+
+        Rigidbody2D rb = axeInstanceRef.GetComponent<Rigidbody2D>();
+
+        SpriteRenderer axeSprite = axeInstanceRef.GetComponent<SpriteRenderer>();
+
+        
+        Vector2 throwDirection = (transform.localScale.x > 0) ? -transform.right : transform.right;
+        rb.velocity = throwDirection;
+
+        if (moveDir.x < 0)
+        {
+            axeSprite.flipX = false;
+            axeLastDirection = false;
+        }
+        else if (moveDir.x > 0)
+        {
+            axeSprite.flipX = true;
+            axeLastDirection = true;
+        }
+        else
+        {
+            axeSprite.flipX = axeLastDirection;
+        }
+        
+        //else if (axeInstanceRef.transform.right != Vector3.right) axeInstanceRef.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         
 
     }
