@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private bool isMoving;
     [SerializeField] private Animator playerAnim;
     [SerializeField] private Animator ghostAnim;
+    [SerializeField] private  ParticleSystem slashEffect; // Sınıf seviyesinde tanımlama
 
     [SerializeField] private float level;
     [SerializeField] private float maxExp;
@@ -108,7 +109,7 @@ public class Player : MonoBehaviour
 
     private void PlayerSwordAttack()
     {
-        
+        slashEffect.Play(); 
 
         Vector2 direction = (transform.localScale.x > 0) ? -transform.right : transform.right;
 
@@ -138,6 +139,7 @@ public class Player : MonoBehaviour
 
             }
         }
+
     }
 
     private void PlayerThrowAxe()
