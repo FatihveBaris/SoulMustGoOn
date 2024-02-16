@@ -44,8 +44,7 @@ public class Player : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
 
-        playerSwordAS = 60 / (playerSwordAS * 60);
-        playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
+        
 
     }
 
@@ -56,6 +55,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        playerSwordAS = 60 / (playerSwordAS * 60);
+        playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
+
         LevelUp();
         Move();
 
