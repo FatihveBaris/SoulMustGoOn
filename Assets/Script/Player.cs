@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     private Vector2 moveDir;
     private Transform playerTransform;
     private bool isMoving;
-    [SerializeField] private Animator anim;
-
+    [SerializeField] private Animator playerAnim;
+    [SerializeField] private Animator ghostAnim;
 
     [SerializeField] private float level;
     [SerializeField] private float maxExp;
@@ -47,7 +47,8 @@ public class Player : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
 
-        
+        playerSwordAS = 60 / (playerSwordAS * 60);
+        playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
 
     }
 
@@ -58,8 +59,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        playerSwordAS = 60 / (playerSwordAS * 60);
-        playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
+   
 
         LevelUp();
         Move();
@@ -173,35 +173,44 @@ public class Player : MonoBehaviour
     public void TakeDamagePlayer(float dmg)
     {
         playerHp -= dmg;
+        if (playerHp <= 0)
+        {
+            PlayerDie();
+        }
+        
     }
 
     public void PlayerDie()
     {
-        if (playerHp <= 0)
-        {
-            anim.SetBool("Die",true);
+        
+            playerAnim.SetBool("Die",true);
 
             ghost.transform.position = gameObject.transform.position;
-
-
+            ghost.GetComponent<GhostMovemment>().enabled = true;
+            ghostAnim.SetBool("Ressurection",true);
+            ghostAnim.SetBool("Ressurection", false);
+            ghost.tag = "Player";
+            
             Destroy(gameObject);
-        }
+
     }
 
     private void AnimationUpdate()
     {
         if (moveDir.x != 0)
         {
-            anim.SetBool("Walk",true);
+            playerAnim.SetBool("Walk",true);
         }else if (moveDir.y != 0)
         {
-            anim.SetBool("Walk", true);
+            playerAnim.SetBool("Walk", true);
         }
         else
         {
-            anim.SetBool("Walk", false);
+            playerAnim.SetBool("Walk", false);
         }
     }
+
+
 
     private void LevelUp()
     {

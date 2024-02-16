@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7811196748640100385}
   - component: {fileID: 6359014102613943522}
   - component: {fileID: 8992941374511367020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,19 +141,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b697795b9803e42ad78b7737505e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 95000011895321844}
+  playerAnim: {fileID: 95000011895321844}
+  ghostAnim: {fileID: 0}
   level: 1
   maxExp: 10
   currentExp: 0
-  playerHp: 100
+  playerHp: 20
   playerArmor: 10
   playerSpeed: 3
   playerRb: {fileID: 6359014102613943522}
+  ghost: {fileID: 0}
   playerSwordDmg: 0
   playerSwordAS: 2
   playerSwordDist: 5
   throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
-  playerTrowAxeCD: 1
+  playerTrowAxeCD: 0.1
   isAxeSkill: 1
 --- !u!1 &1000011164445256
 GameObject:
@@ -165,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011100352644}
   - component: {fileID: 212000010816519800}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012139759400}
   - component: {fileID: 212000013410116670}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010050103230}
   - component: {fileID: 212000010885969670}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Back arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012883391804}
   - component: {fileID: 212000012135133868}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013780255908}
   - component: {fileID: 212000012764068944}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Front leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011273785906}
   - component: {fileID: 212000012884130970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Back leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010376655498}
   - component: {fileID: 212000010432600294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010764503930}
   - component: {fileID: 212000010006319442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore;
 
 public class EnemyMovement : MonoBehaviour
 {
     public EnemyScriptableObjects enemyData;
-    Transform player;
+    GameObject player;
     void Start()
     {
-        player = FindObjectOfType<Player>().transform;
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);  //Düşmanı sürekli olarak oyuncuya doğru hareket ettirir
+
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,
+            enemyData.MoveSpeed * Time.deltaTime); //Düşmanı sürekli olarak oyuncuya doğru hareket ettirir
+
+
     }
 }
