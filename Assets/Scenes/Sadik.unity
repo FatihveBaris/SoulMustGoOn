@@ -724,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 710090109}
     - target: {fileID: 771681629160132431, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
       propertyPath: playerSwordAS
-      value: 0
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 771681629160132431, guid: 315058484cf2044ce8dcb608b4678ff6, type: 3}
       propertyPath: playerSwordDmg
