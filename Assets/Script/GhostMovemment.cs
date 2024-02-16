@@ -70,8 +70,8 @@ public class GhostMovemment : MonoBehaviour
         {
             coll.GetComponent<Player>().enabled = true;
             coll.tag = "Player";
-
-
+            coll.name = "PlayableChracter";
+            
             playerRb.velocity = new Vector2(0, 0);
             gameObject.transform.position = new Vector3(1000, 0);
             gameObject.tag = "Untagged";
