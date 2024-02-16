@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObjects enemyData;
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer sr;
-    // Current Stats
+    // Current Stats NABER XD
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
@@ -55,7 +55,7 @@ public class EnemyStats : MonoBehaviour
             {
                 coll.gameObject.GetComponent<Player>().TakeDamagePlayer(currentDamage);
                 Debug.Log(coll.gameObject.GetComponent<Player>().playerHp);
-                timer = 0f; // Zamanlayýcýyý sýfýrla
+                timer = 0f; // Zamanlayï¿½cï¿½yï¿½ sï¿½fï¿½rla
             }
         }
 
