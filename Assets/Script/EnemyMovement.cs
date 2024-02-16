@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-        if (player == null)
+        if (player == null || player.tag == "Untagged")
         {
             player = GameObject.FindWithTag("Player");
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -50,10 +51,33 @@ public class GhostMovemment : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         ghostHp -= dmg;
+        DieGhost();
+    }
+
+    public void DieGhost()
+    {
+
     }
     
     void AnimationUpdate()
     {
         
+    }
+
+    private void OnTriggerStay2D(Collider2D coll)
+    {
+        if (Input.GetKey(KeyCode.F) && coll.CompareTag("DeadBody"))
+        {
+            coll.GetComponent<Player>().enabled = true;
+            coll.tag = "Player";
+
+
+            playerRb.velocity = new Vector2(0, 0);
+            gameObject.transform.position = new Vector3(1000, 0);
+            gameObject.tag = "Untagged";
+            gameObject.GetComponent<GhostMovemment>().enabled = false;
+
+
+        }
     }
 }
