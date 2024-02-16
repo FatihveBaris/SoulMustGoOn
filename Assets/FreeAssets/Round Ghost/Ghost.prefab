@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 334873133960106381}
   - component: {fileID: 7231116659265355589}
   - component: {fileID: 5302574658831272207}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
