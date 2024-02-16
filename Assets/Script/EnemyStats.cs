@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObjects enemyData;
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer sr;
-    // Current Stats NABER XD
+    // Current Stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
