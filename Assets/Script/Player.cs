@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float playerSpeed;
     [SerializeField] private Rigidbody2D playerRb;
 
+    [SerializeField] private GameObject ghost;
+
+
     [SerializeField] private float playerSwordDmg;
     [SerializeField] private float playerSwordAS; //�al��ma prensibi saniyede ka� kez sald�raca��n� g�steriyor
     [SerializeField] private float playerSwordDist;
@@ -172,18 +175,31 @@ public class Player : MonoBehaviour
         playerHp -= dmg;
     }
 
+    public void PlayerDie()
+    {
+        if (playerHp <= 0)
+        {
+            anim.SetBool("Die",true);
+
+            ghost.transform.position = gameObject.transform.position;
+
+
+            Destroy(gameObject);
+        }
+    }
+
     private void AnimationUpdate()
     {
         if (moveDir.x != 0)
         {
-            anim.SetBool("knightWalk",true);
+            anim.SetBool("Walk",true);
         }else if (moveDir.y != 0)
         {
-            anim.SetBool("knightWalk", true);
+            anim.SetBool("Walk", true);
         }
         else
         {
-            anim.SetBool("knightWalk", false);
+            anim.SetBool("Walk", false);
         }
     }
 
