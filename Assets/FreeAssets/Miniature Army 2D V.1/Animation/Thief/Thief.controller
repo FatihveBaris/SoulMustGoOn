@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: thiefDie
+    m_ConditionEvent: Die
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012535644116}
@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: thiefWalk
+    m_ConditionEvent: Walk
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012456708588}
@@ -59,7 +59,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: thiefRessurection
+    m_ConditionEvent: Ressurection
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8069551374119892196}
@@ -84,7 +84,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: thiefWalk
+    m_ConditionEvent: Walk
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012456708588}
@@ -109,7 +109,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: thiefWalk
+    m_ConditionEvent: Walk
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012636783794}
@@ -156,23 +156,23 @@ AnimatorController:
   m_Name: Thief
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: thiefWalk
+  - m_Name: Walk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: thiefDie
+  - m_Name: Die
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: thiefRessurection
+  - m_Name: Ressurection
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
@@ -388,19 +388,19 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012456708588}
-    m_Position: {x: 260, y: 10, z: 0}
+    m_Position: {x: 240, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000010991100100}
-    m_Position: {x: 0, y: -80, z: 0}
+    m_Position: {x: -30, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000011142089530}
-    m_Position: {x: 0, y: -110, z: 0}
+    m_Position: {x: -30, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000011095785302}
-    m_Position: {x: -40, y: -60, z: 0}
+    m_Position: {x: -30, y: -180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012535644116}
-    m_Position: {x: 550, y: 10, z: 0}
+    m_Position: {x: 590, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000010359147360}
     m_Position: {x: -80, y: -40, z: 0}
@@ -426,7 +426,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: thiefDie
+    m_ConditionEvent: Die
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102000012535644116}
