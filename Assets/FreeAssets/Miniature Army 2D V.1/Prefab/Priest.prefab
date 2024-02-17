@@ -503,6 +503,7 @@ MonoBehaviour:
   playerAnim: {fileID: 95000010463452298}
   ghostAnim: {fileID: 0}
   slashEffect: {fileID: 991887419258607878}
+  gameManager: {fileID: 0}
   level: 1
   maxExp: 20
   currentExp: 0
@@ -512,7 +513,7 @@ MonoBehaviour:
   playerRb: {fileID: 7828970523694127876}
   ghost: {fileID: 0}
   playerSwordDmg: 0
-  playerSwordAS: 0
+  playerSwordAS: 1
   playerSwordDist: 0
   throwAxePref: {fileID: 0}
   playerTrowAxeCD: 0

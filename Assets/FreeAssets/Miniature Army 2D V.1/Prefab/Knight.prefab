@@ -145,6 +145,7 @@ MonoBehaviour:
   playerAnim: {fileID: 95000011895321844}
   ghostAnim: {fileID: 0}
   slashEffect: {fileID: 8581530276680803645}
+  gameManager: {fileID: 0}
   level: 1
   maxExp: 10
   currentExp: 0

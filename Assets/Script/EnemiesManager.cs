@@ -9,6 +9,11 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
     float timer;
+    bool hasSpawnTimerBeenReducedAt15 = false;
+    bool hasSpawnTimerBeenReducedAt30 = false;
+    bool hasSpawnTimerBeenReducedAt45 = false;
+    bool hasSpawnTimerBeenReducedAt59 = false;
+    [SerializeField] float timerShorter;
 
     private void Update()
     {
@@ -17,6 +22,39 @@ public class EnemiesManager : MonoBehaviour
         {
             SpawnEnemy();
             timer = spawnTimer;
+        }
+
+        // Oyunun süresini al ve saniye cinsinden dönüştür
+        int gameSeconds = (int)Time.timeSinceLevelLoad % 60;
+
+        // Eğer oyunun süresi 15, 30, 45 veya 59. saniye ise
+        if (gameSeconds == 15 && !hasSpawnTimerBeenReducedAt15)
+        {
+            // spawnTimer'ı 1.1'e böl
+            spawnTimer /= timerShorter;
+            hasSpawnTimerBeenReducedAt15 = true;
+        }
+        else if (gameSeconds == 30 && !hasSpawnTimerBeenReducedAt30)
+        {
+            spawnTimer /= timerShorter;
+            hasSpawnTimerBeenReducedAt30 = true;
+        }
+        else if (gameSeconds == 45 && !hasSpawnTimerBeenReducedAt45)
+        {
+            spawnTimer /= timerShorter;
+            hasSpawnTimerBeenReducedAt45 = true;
+        }
+        else if (gameSeconds == 59 && !hasSpawnTimerBeenReducedAt59)
+        {
+            spawnTimer /= timerShorter;
+            hasSpawnTimerBeenReducedAt59 = true;
+        }
+        else if (gameSeconds != 15 && gameSeconds != 30 && gameSeconds != 45 && gameSeconds != 59)
+        {
+            hasSpawnTimerBeenReducedAt15 = false;
+            hasSpawnTimerBeenReducedAt30 = false;
+            hasSpawnTimerBeenReducedAt45 = false;
+            hasSpawnTimerBeenReducedAt59 = false;
         }
     }
 
@@ -48,7 +86,5 @@ public class EnemiesManager : MonoBehaviour
         position.z = 0;
 
         return position;
-
     }
-
 }

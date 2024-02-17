@@ -29,8 +29,8 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
-            anim.SetBool("skeletonDie",true);
-
+            anim.SetBool("Die",true);
+            isKilled = true;
         }
     }
 
@@ -77,7 +77,6 @@ public class EnemyStats : MonoBehaviour
 
     public void Kill()
     {
-        isKilled = true;
         Destroy(gameObject); 
     }
 
