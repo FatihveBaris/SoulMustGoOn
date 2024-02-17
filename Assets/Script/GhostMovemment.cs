@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class GhostMovemment : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GhostMovemment : MonoBehaviour
 
     void FixedUpdate()
     {
-        InputManagement();  
+        InputManagement();
     }
 
     void Update()
@@ -58,12 +59,17 @@ public class GhostMovemment : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         ghostHp -= dmg;
-        if(ghostHp == 0) DieGhost();
+        if(ghostHp <= 0)
+        {
+            DieGhost();
+        }
     }
 
     public void DieGhost()
     {
         anim.SetBool("Die",true);
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
     }
     
     void AnimationUpdate()
@@ -88,5 +94,11 @@ public class GhostMovemment : MonoBehaviour
 
 
         }
+    }
+
+
+    void GameOver()
+    {
+       SceneManager.LoadScene("GameOver");
     }
 }
