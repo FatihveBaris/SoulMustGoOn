@@ -11,8 +11,15 @@ public class GhostMovemment : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private Animator anim;
     [SerializeField] public float ghostHp;
+    [SerializeField] private GameObject gameManager;
+    private GameManager gmScript;
 
     // Update is called once per frame
+    void start()
+    {
+        gmScript = gameManager.GetComponent<GameManager>();
+    }
+
     void FixedUpdate()
     {
         InputManagement();  
@@ -69,6 +76,7 @@ public class GhostMovemment : MonoBehaviour
         if (Input.GetKey(KeyCode.F) && coll.CompareTag("DeadBody"))
         {
             coll.GetComponent<Player>().enabled = true;
+            coll.GetComponent<Player>().PlayerReborn(gmScript.preLevel);
             coll.tag = "Player";
             coll.name = "PlayableChracter";
             

@@ -196,6 +196,7 @@ MonoBehaviour:
   playerRb: {fileID: 5302574658831272207}
   anim: {fileID: 8524783763845435047}
   ghostHp: 0
+  gameManager: {fileID: 0}
 --- !u!50 &5302574658831272207
 Rigidbody2D:
   serializedVersion: 4

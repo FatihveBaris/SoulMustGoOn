@@ -10,9 +10,14 @@ public class Player : MonoBehaviour
     private Vector2 moveDir;
     private Transform playerTransform;
     private bool isMoving;
+    
+
     [SerializeField] private Animator playerAnim;
     [SerializeField] private Animator ghostAnim;
     [SerializeField] private  ParticleSystem slashEffect; // Sınıf seviyesinde tanımlama
+    [SerializeField] private GameObject gameManager;
+
+
 
     [SerializeField] private float level;
     [SerializeField] private float maxExp;
@@ -47,6 +52,7 @@ public class Player : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
+        
 
         playerSwordAS = 60 / (playerSwordAS * 60);
         playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
@@ -60,9 +66,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-   
-
-        LevelUp();
+        
+        if (currentExp >= maxExp)
+        {
+            
+            maxExp += 20;
+            currentExp = 0;
+        }
         Move();
 
         timerSword += Time.deltaTime;
@@ -192,8 +202,27 @@ public class Player : MonoBehaviour
             ghostAnim.SetBool("Ressurection",true);
             ghostAnim.SetBool("Ressurection", false);
             ghost.tag = "Player";
+
+
+            gameManager.GetComponent<GameManager>().preLevel = level;
             
             Destroy(gameObject);
+
+    }
+
+    public void PlayerReborn(float level)
+    {
+        while (level > 0)
+        {
+            maxExp += 20;
+            playerHp += playerHp * 0.25f;
+            playerSpeed += 0.30f;
+            playerSwordAS += 0.1f;
+            level -= 1;
+            Debug.Log("player statlari artti" + playerHp +" "+ playerSpeed);
+        }
+        currentExp = 0;
+
 
     }
 
@@ -218,10 +247,13 @@ public class Player : MonoBehaviour
     {
         if (currentExp >= maxExp)
         {
+
             level += 1;
-            maxExp += maxExp;
-            currentExp = 0;
-            playerHp += playerHp / (playerHp / level);
+            
         }
     }
+
+    //maxExp += maxExp;
+    //currentExp = 0;
+    //playerHp += playerHp / (playerHp / level);
 }
