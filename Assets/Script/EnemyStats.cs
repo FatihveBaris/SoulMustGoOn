@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if(currentHealth <= 0)
         {
-            anim.SetBool("skeletonDie",true);
+            anim.SetBool("Die",true);
 
         }
     }
