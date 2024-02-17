@@ -58,7 +58,7 @@ public class GhostMovemment : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         ghostHp -= dmg;
-        DieGhost();
+        if(ghostHp == 0) DieGhost();
     }
 
     public void DieGhost()
