@@ -154,8 +154,8 @@ MonoBehaviour:
   playerRb: {fileID: 6359014102613943522}
   ghost: {fileID: 0}
   playerSwordDmg: 0
-  playerSwordAS: 1000
-  playerSwordDist: 4
+  playerSwordAS: 1
+  playerSwordDist: 4.6
   throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
   playerTrowAxeCD: 0.1
   isAxeSkill: 1
@@ -934,7 +934,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

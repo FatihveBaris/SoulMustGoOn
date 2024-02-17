@@ -624,9 +624,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 185824874}
     - target: {fileID: 8992941374511367020, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+      propertyPath: playerHp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992941374511367020, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
       propertyPath: ghostAnim
       value: 
       objectReference: {fileID: 185824876}
+    - target: {fileID: 8992941374511367020, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
+      propertyPath: playerSwordAS
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1029,10 +1037,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merchant
       objectReference: {fileID: 0}
-    - target: {fileID: 1000013261649242, guid: 7d908ba845b1044e6829ed5fb7c4be10, type: 3}
-      propertyPath: m_TagString
-      value: DeadBody
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010300450076, guid: 7d908ba845b1044e6829ed5fb7c4be10, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.61
@@ -1078,9 +1082,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 185824874}
     - target: {fileID: 2520701837696381012, guid: 7d908ba845b1044e6829ed5fb7c4be10, type: 3}
-      propertyPath: playerSpeed
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: ghostAnim
+      value: 
+      objectReference: {fileID: 185824876}
     - target: {fileID: 2520701837696381012, guid: 7d908ba845b1044e6829ed5fb7c4be10, type: 3}
       propertyPath: throwAxePref
       value: 
