@@ -205,7 +205,7 @@ public class Player : MonoBehaviour
 
 
             gameManager.GetComponent<GameManager>().preLevel = level;
-            
+            Debug.Log("pre level " + gameManager.GetComponent<GameManager>().preLevel);
             Destroy(gameObject);
 
     }

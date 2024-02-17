@@ -15,7 +15,7 @@ public class GhostMovemment : MonoBehaviour
     private GameManager gmScript;
 
     // Update is called once per frame
-    void start()
+    void Start()
     {
         gmScript = gameManager.GetComponent<GameManager>();
     }
