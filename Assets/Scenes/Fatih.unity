@@ -309,16 +309,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010300450076, guid: 7d908ba845b1044e6829ed5fb7c4be10, type: 3}
   m_PrefabInstance: {fileID: 570100184}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &678974989 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4703445324737445561, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
-  m_PrefabInstance: {fileID: 7181968722290742683}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &678974990 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4734333775256411837, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
-  m_PrefabInstance: {fileID: 7181968722290742683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &794160476
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,9 +338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7734d6ba8bea046a1aeea5a5ea9de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6624775626267663717, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+  skeleton: {fileID: 6624775626267663717, guid: 20777a187d31e9a49b07992b4838ed5e, type: 3}
+  goblin: {fileID: 6203474984873930648, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
   spawnArea: {x: 12, y: 8}
   spawnTimer: 2
+  spawnGoblin: 2
   player: {fileID: 1000010755293042, guid: 978fa2fb617654f5eaeff9da6fc7d116, type: 3}
   timerShorter: 1.3
 --- !u!4 &794160478
@@ -1235,18 +1227,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1629744371469229904, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 678974990}
-    - target: {fileID: 1629744371469229904, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 678974989}
-    - target: {fileID: 1629744371469229904, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
-      propertyPath: giveExpRate
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2749933209530062652, guid: 9005805e182da1240a3cfc811f7ab4c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.47
