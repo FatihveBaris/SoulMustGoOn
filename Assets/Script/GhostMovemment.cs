@@ -63,7 +63,7 @@ public class GhostMovemment : MonoBehaviour
 
     public void DieGhost()
     {
-
+        anim.SetBool("Die",true);
     }
     
     void AnimationUpdate()
