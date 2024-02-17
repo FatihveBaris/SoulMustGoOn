@@ -68,7 +68,6 @@ public class GhostMovemment : MonoBehaviour
     public void DieGhost()
     {
         anim.SetBool("Die",true);
-        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
     }
     
