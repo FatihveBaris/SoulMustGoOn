@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 512068862}
   - component: {fileID: 512068861}
   - component: {fileID: 512068860}
+  - component: {fileID: 512068863}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -281,7 +282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 512068861}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 512068863}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &512068861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +333,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512068858}
   m_CullTransparentMesh: 1
+--- !u!114 &512068863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512068858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62099d3c4551e3c4ea2f3ca848ef636c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515274281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1801,7 @@ GameObject:
   - component: {fileID: 1852962736}
   - component: {fileID: 1852962735}
   - component: {fileID: 1852962734}
+  - component: {fileID: 1852962737}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1846,7 +1872,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1852962735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1852962737}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1852962735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,6 +1923,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852962732}
   m_CullTransparentMesh: 1
+--- !u!114 &1852962737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852962732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62099d3c4551e3c4ea2f3ca848ef636c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875561890
 GameObject:
   m_ObjectHideFlags: 0
