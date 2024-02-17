@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Goblin mob
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  maxHealth: 20
+  maxHealth: 2
   damage: 10
