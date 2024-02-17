@@ -599,10 +599,11 @@ MonoBehaviour:
   playerAnim: {fileID: 95000012115735308}
   ghostAnim: {fileID: 0}
   slashEffect: {fileID: 8899646867905631922}
+  gameManager: {fileID: 0}
   level: 1
   maxExp: 20
   currentExp: 0
-  playerHp: 0
+  playerHp: 20
   playerArmor: 0
   playerSpeed: 3
   playerRb: {fileID: 7925406559420096279}
