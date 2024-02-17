@@ -734,7 +734,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012663239756}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -772,7 +772,7 @@ MonoBehaviour:
   level: 1
   maxExp: 20
   currentExp: 0
-  playerHp: 50
+  playerHp: 20
   playerArmor: 0
   playerSpeed: 3
   playerRb: {fileID: 7154102697752744685}

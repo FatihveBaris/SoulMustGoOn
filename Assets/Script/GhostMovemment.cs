@@ -63,7 +63,7 @@ public class GhostMovemment : MonoBehaviour
 
     public void DieGhost()
     {
-
+        anim.SetBool("Die",true);
     }
     
     void AnimationUpdate()
@@ -77,6 +77,7 @@ public class GhostMovemment : MonoBehaviour
         {
             coll.GetComponent<Player>().enabled = true;
             coll.GetComponent<Player>().PlayerReborn(gmScript.preLevel);
+            coll.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             coll.tag = "Player";
             coll.name = "PlayableChracter";
             
