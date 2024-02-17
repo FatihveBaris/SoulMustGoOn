@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 3e8a6351e60739e4e827b448f919568f, type: 2}
-  anim: {fileID: 0}
-  sr: {fileID: 0}
-  giveExpRate: 0
+  anim: {fileID: 4703445324737445561}
+  sr: {fileID: 4734333775256411837}
+  giveExpRate: 20
   isKilled: 0
   targetLayer:
     serializedVersion: 2
