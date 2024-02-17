@@ -30,7 +30,7 @@ public class EnemyStats : MonoBehaviour
         if(currentHealth <= 0)
         {
             anim.SetBool("Die",true);
-
+            isKilled = true;
         }
     }
 
@@ -77,7 +77,6 @@ public class EnemyStats : MonoBehaviour
 
     public void Kill()
     {
-        isKilled = true;
         Destroy(gameObject); 
     }
 
