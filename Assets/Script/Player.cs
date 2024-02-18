@@ -123,11 +123,6 @@ public class Player : MonoBehaviour
 
         Vector2 direction = (transform.localScale.x > 0) ? -transform.right : transform.right;
 
-        //YUKARIDAK� DIRECTIONA G�RE BURADA AN�MASYONU GER�EKLE�T�REB�L�RS�N
-        //YUKARIDAK� DIRECTIONA G�RE BURADA AN�MASYONU GER�EKLE�T�REB�L�RS�N
-        //YUKARIDAK� DIRECTIONA G�RE BURADA AN�MASYONU GER�EKLE�T�REB�L�RS�N
-        //YUKARIDAK� DIRECTIONA G�RE BURADA AN�MASYONU GER�EKLE�T�REB�L�RS�N
-        //YUKARIDAK� DIRECTIONA G�RE BURADA AN�MASYONU GER�EKLE�T�REB�L�RS�N
 
         Debug.DrawRay(transform.position + new Vector3(0f,1), direction * playerSwordDist, Color.red);
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position+new Vector3(0f, 1), direction, playerSwordDist);
