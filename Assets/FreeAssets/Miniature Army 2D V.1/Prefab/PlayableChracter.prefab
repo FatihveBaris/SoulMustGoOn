@@ -5282,12 +5282,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7883972790544455456}
   - component: {fileID: 7797640289433948100}
-  - component: {fileID: 72541966661884689}
   - component: {fileID: 3843975272979324882}
   - component: {fileID: 1272849699966580828}
+  - component: {fileID: 7711449713455092251}
   m_Layer: 0
   m_Name: PlayableChracter
-  m_TagString: Player
+  m_TagString: DeadBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5300,7 +5300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7882644082269783106}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.59, y: -1.8455793, z: -0.04788417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5330,51 +5330,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &72541966661884689
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7882644082269783106}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0051933825, y: 0.84370005}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5741443, y: 1.6807735}
-  m_EdgeRadius: 0
 --- !u!50 &3843975272979324882
 Rigidbody2D:
   serializedVersion: 4
@@ -5409,7 +5364,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7882644082269783106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b697795b9803e42ad78b7737505e38, type: 3}
   m_Name: 
@@ -5426,12 +5381,99 @@ MonoBehaviour:
   playerSpeed: 3
   playerRb: {fileID: 3843975272979324882}
   ghost: {fileID: 0}
-  playerSwordDmg: 0
+  playerSwordDmg: 10
   playerSwordAS: 1
   playerSwordDist: 4.6
   throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
-  playerTrowAxeCD: 0.1
+  playerTrowAxeCD: 1
   isAxeSkill: 1
+--- !u!60 &7711449713455092251
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882644082269783106}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.27499247, y: 0.45435774}
+      - {x: 0.32431972, y: 0.55767393}
+      - {x: 0.36029708, y: 0.65098965}
+      - {x: 0.31702876, y: 0.70782804}
+      - {x: 0.27304292, y: 0.7245877}
+      - {x: 0.27297652, y: 0.90814203}
+      - {x: 0.33517373, y: 0.9873478}
+      - {x: 0.3082373, y: 1.0348147}
+      - {x: 0.26527154, y: 1.0875741}
+      - {x: 0.26427257, y: 1.1354473}
+      - {x: 0.31863177, y: 1.1503514}
+      - {x: 0.32339704, y: 1.2314973}
+      - {x: 0.32612562, y: 1.2387605}
+      - {x: 0.29578173, y: 1.2930598}
+      - {x: 0.22697496, y: 1.3536966}
+      - {x: 0.16045296, y: 1.3526529}
+      - {x: 0.15863466, y: 1.5051057}
+      - {x: 0.19012702, y: 1.540965}
+      - {x: 0.27397788, y: 1.5956601}
+      - {x: 0.32564235, y: 1.6276839}
+      - {x: 0.3332529, y: 1.717998}
+      - {x: 0.30414665, y: 1.7194611}
+      - {x: 0.30001318, y: 1.7637326}
+      - {x: 0.28908432, y: 1.7660714}
+      - {x: 0.23576176, y: 1.7649896}
+      - {x: 0.235587, y: 1.7904338}
+      - {x: 0.21312082, y: 1.7924262}
+      - {x: 0.15748262, y: 1.8036746}
+      - {x: 0.05256605, y: 1.7796915}
+      - {x: 0.052500963, y: 1.7403122}
+      - {x: -0.012599826, y: 1.7416204}
+      - {x: -0.15088964, y: 1.7334554}
+      - {x: -0.18910015, y: 1.3489394}
+      - {x: -0.32074106, y: 1.1346719}
+      - {x: -0.5067488, y: 1.0689869}
+      - {x: -0.49405992, y: 0.57999694}
+      - {x: -0.21582532, y: 0.4071046}
+      - {x: -0.47897065, y: 0.22364557}
+      - {x: -0.53500634, y: 0.08825567}
+      - {x: -0.51985854, y: -0.019370914}
+      - {x: -0.2811085, y: -0.0052194595}
+      - {x: 0.20386446, y: 0.0033476949}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7882644083574275158
 GameObject:
   m_ObjectHideFlags: 0
