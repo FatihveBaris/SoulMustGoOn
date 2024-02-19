@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AxeCollision : MonoBehaviour
@@ -13,10 +14,22 @@ public class AxeCollision : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         
     }
+    void Update()
+    {
+        if (player == null || player.tag == "Untagged")
+        {
+            player = GameObject.FindWithTag("Player");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Enemy"))
+        if(player.GetComponent<GhostMovemment>() != null && player.GetComponent<GhostMovemment>().enabled)
+        {
+            DestroyAllEnemies();
+            DestroyAllAxes();
+        }
+        else if (coll.gameObject.CompareTag("Enemy"))
         {
             coll.GetComponent<EnemyStats>().TakeDamage(10);
             float GiveExpRate = coll.GetComponent<EnemyStats>().giveExpRate;
@@ -24,8 +37,24 @@ public class AxeCollision : MonoBehaviour
             Destroy(gameObject);
 
         }else if(coll.gameObject.CompareTag("Player")){}
-        
+
 
     }
-    
+    void DestroyAllEnemies()
+{
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    foreach(GameObject enemy in enemies)
+    {
+        Destroy(enemy);
+    }
+}
+
+    void DestroyAllAxes()
+{
+    GameObject[] axes = GameObject.FindGameObjectsWithTag("Axe");
+    foreach(GameObject axe in axes)
+    {
+        Destroy(axe);
+    }
+}
 }

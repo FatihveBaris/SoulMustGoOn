@@ -5378,7 +5378,7 @@ MonoBehaviour:
   currentExp: 0
   playerHp: 20
   playerArmor: 10
-  playerSpeed: 3
+  playerSpeed: 4
   playerRb: {fileID: 3843975272979324882}
   ghost: {fileID: 0}
   playerSwordDmg: 10
