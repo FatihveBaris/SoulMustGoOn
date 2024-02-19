@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 
@@ -12,13 +13,18 @@ public class GhostMovemment : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private Animator anim;
     [SerializeField] public float ghostHp;
+    [SerializeField] public float ghostMaxHp;
     [SerializeField] private GameObject gameManager;
     private GameManager gmScript;
+
+    public Image backGroundImage;
+    public Image healtImage;
 
     // Update is called once per frame
     void Start()
     {
         gmScript = gameManager.GetComponent<GameManager>();
+        ghostHp = ghostMaxHp;
     }
 
     void FixedUpdate()
@@ -28,6 +34,10 @@ public class GhostMovemment : MonoBehaviour
 
     void Update()
     {
+        if(healtImage.fillAmount == backGroundImage.fillAmount)
+        {
+            backGroundImage.fillAmount = Mathf.Lerp(backGroundImage.fillAmount, healtImage.fillAmount, 0.01f);
+        }
         Move();
     }
 
@@ -59,6 +69,7 @@ public class GhostMovemment : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         ghostHp -= dmg;
+        healtImage.fillAmount = ghostHp/ghostMaxHp;
         if(ghostHp <= 0)
         {
             DieGhost();
@@ -75,6 +86,7 @@ public class GhostMovemment : MonoBehaviour
     {
         
     }
+  
 
     private void OnTriggerStay2D(Collider2D coll)
     {
@@ -93,7 +105,9 @@ public class GhostMovemment : MonoBehaviour
 
 
         }
+        
     }
+
 
 
     void GameOver()

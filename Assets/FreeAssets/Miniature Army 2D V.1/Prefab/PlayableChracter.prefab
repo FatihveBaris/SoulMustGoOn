@@ -5377,6 +5377,7 @@ MonoBehaviour:
   maxExp: 10
   currentExp: 0
   playerHp: 20
+  maxHp: 20
   playerArmor: 10
   playerSpeed: 4
   playerRb: {fileID: 3843975272979324882}
@@ -5387,6 +5388,8 @@ MonoBehaviour:
   throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
   playerTrowAxeCD: 1
   isAxeSkill: 1
+  backGroundImage: {fileID: 0}
+  healtImage: {fileID: 0}
 --- !u!60 &7711449713455092251
 PolygonCollider2D:
   m_ObjectHideFlags: 0

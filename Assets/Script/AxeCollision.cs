@@ -26,7 +26,7 @@ public class AxeCollision : MonoBehaviour
     {
         if(player.GetComponent<GhostMovemment>() != null && player.GetComponent<GhostMovemment>().enabled)
         {
-            DestroyAllEnemies();
+            
             DestroyAllAxes();
         }
         else if (coll.gameObject.CompareTag("Enemy"))
@@ -40,14 +40,6 @@ public class AxeCollision : MonoBehaviour
 
 
     }
-    void DestroyAllEnemies()
-{
-    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-    foreach(GameObject enemy in enemies)
-    {
-        Destroy(enemy);
-    }
-}
 
     void DestroyAllAxes()
 {

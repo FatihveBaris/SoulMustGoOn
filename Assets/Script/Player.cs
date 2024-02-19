@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
+// using Microsoft.Unity.VisualStudio.Editor;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
     public float MaxExp { get => maxExp; private set => maxExp = value; }
 
     [SerializeField] public float playerHp;
+    [SerializeField] public float maxHp;
     [SerializeField] private float playerArmor;
     [SerializeField] private float playerSpeed;
     [SerializeField] private Rigidbody2D playerRb;
@@ -48,6 +52,11 @@ public class Player : MonoBehaviour
     private float timerAxe;
 
 
+    
+    public Image backGroundImage;
+    public Image healtImage;
+
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -56,6 +65,7 @@ public class Player : MonoBehaviour
 
         playerSwordAS = 60 / (playerSwordAS * 60);
         playerTrowAxeCD = 60 / (playerTrowAxeCD * 60);
+        playerHp = maxHp;
 
     }
 
@@ -66,7 +76,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        if(healtImage.fillAmount == backGroundImage.fillAmount)
+        {
+            backGroundImage.fillAmount = Mathf.Lerp(backGroundImage.fillAmount, healtImage.fillAmount, 0.01f);
+        }
+
         if (currentExp >= maxExp)
         {
             
@@ -180,6 +194,8 @@ public class Player : MonoBehaviour
     public void TakeDamagePlayer(float dmg)
     {
         playerHp -= dmg;
+        healtImage.fillAmount = playerHp/maxHp;
+        
         if (playerHp <= 0)
         {
             PlayerDie();
@@ -192,8 +208,12 @@ public class Player : MonoBehaviour
         
             playerAnim.SetBool("Die",true);
 
+            DestroyAllEnemies();
+
             ghost.transform.position = gameObject.transform.position;
             ghost.GetComponent<GhostMovemment>().enabled = true;
+            ghost.GetComponent<GhostMovemment>().healtImage.fillAmount = ghost.GetComponent<GhostMovemment>().ghostHp
+                /ghost.GetComponent<GhostMovemment>().ghostMaxHp;
             ghostAnim.SetBool("Ressurection",true);
             ghostAnim.SetBool("Ressurection", false);
             ghost.tag = "Player";
@@ -210,13 +230,15 @@ public class Player : MonoBehaviour
         while (level > 0)
         {
             maxExp += 20;
-            playerHp += playerHp * 0.25f;
+            maxHp += maxHp * 0.25f;
+            playerHp = maxHp;
             playerSpeed += 0.30f;
             playerSwordAS += 0.1f;
             level -= 1;
             Debug.Log("player statlari artti" + playerHp +" "+ playerSpeed);
         }
         currentExp = 0;
+        healtImage.fillAmount = playerHp/maxHp;
 
 
     }
@@ -236,17 +258,16 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
-    private void LevelUp()
+    void DestroyAllEnemies()
     {
-        if (currentExp >= maxExp)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies)
         {
-
-            level += 1;
-            
+            Destroy(enemy);
         }
     }
+
+
 
     //maxExp += maxExp;
     //currentExp = 0;

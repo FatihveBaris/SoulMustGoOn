@@ -168,6 +168,7 @@ MonoBehaviour:
   maxExp: 20
   currentExp: 0
   playerHp: 20
+  maxHp: 20
   playerArmor: 0
   playerSpeed: 4
   playerRb: {fileID: 10005248602574256}
@@ -178,6 +179,8 @@ MonoBehaviour:
   throwAxePref: {fileID: 8890792817930273421, guid: 9029649f1e314e04db377ce9a323252e, type: 3}
   playerTrowAxeCD: 1
   isAxeSkill: 1
+  backGroundImage: {fileID: 0}
+  healtImage: {fileID: 0}
 --- !u!1 &1000011210365404
 GameObject:
   m_ObjectHideFlags: 0

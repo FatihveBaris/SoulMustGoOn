@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5302574658831272207}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,16 +187,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8492526902701568018}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2348b965e09d477459562ecc4ea76c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 2
+  playerSpeed: 6
   playerRb: {fileID: 5302574658831272207}
   anim: {fileID: 8524783763845435047}
-  ghostHp: 0
+  ghostHp: 40
+  ghostMaxHp: 40
   gameManager: {fileID: 0}
+  backGroundImage: {fileID: 0}
+  healtImage: {fileID: 0}
 --- !u!50 &5302574658831272207
 Rigidbody2D:
   serializedVersion: 4
