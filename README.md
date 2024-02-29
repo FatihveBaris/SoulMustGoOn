@@ -1,5 +1,4 @@
 # SoulMustGoOn
-# SoulMustGoOn
 
 Welcome to **SoulMustGoOn**, a gripping survival game where immortality is a curse and war is the key to survival. Developed by a creative trio of **@sadikgell**, **@Waylnamz** and **@fatihvebaris**, this game invites players to battle waves of enemies non-stop.
 
